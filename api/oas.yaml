@@ -1,0 +1,38 @@
+openapi: 3.0.1
+info:
+  version: '1.0'
+  title: HTTPBin-Headers
+  description: HTTPBin Headers Demo Spec v1.3
+  contact: 
+    email: david.macdonald@konghq.com
+
+servers:
+  - url: https://httpbin.konghq.com
+
+tags:
+  - name: headers
+    description: Operations for testing headers
+
+paths:
+
+  /headers:
+    get:
+      summary: Returns the request headers.
+      description: Header service
+      operationId: v1GetHeaders
+      tags:
+      - headers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  headers:
+                    type: object
+                    additionalProperties:
+                      type: string
+                required:
+                  - headers
