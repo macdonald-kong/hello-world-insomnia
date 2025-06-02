@@ -50,7 +50,7 @@ jobs:
     - name: Export OpenAPI Spec
       working-directory: .
       run: |
-        inso export spec $(yq '.spec.meta.id' $(echo -n ./api/insomnia-design-doc.yaml)) -w ./api/insomnia-design-doc.yaml --output ./api/oas.yaml
+        inso export spec $(yq '.spec.meta.id' $(echo -n ./api/insomnia-design-doc.yaml)) -w ./api/insomnia-design-doc.yaml > ./api/oas.yaml
 
     # Read the configuration file and the OpenAPI Spec and populate the variables that we will be using
 
