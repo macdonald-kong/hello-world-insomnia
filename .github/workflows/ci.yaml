@@ -41,7 +41,7 @@ jobs:
 
     - name: Install inso tool
       run: |
-        curl -sL https://github.com/Kong/insomnia/releases/download/core%4011.1.0/inso-linux-11.1.0.tar.xz -o inso.tar.gz
+        curl -sL https://github.com/Kong/insomnia/releases/download/core%4011.1.0/inso-linux-11.1.0.tar.xz -o inso.tar.xz
         tar -xf inso.tar.xz -C /tmp
         sudo cp /tmp/inso /usr/local/bin/
 
