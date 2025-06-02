@@ -50,27 +50,16 @@ cookieJar:
   meta:
     id: jar_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502168
-    modified: 1748879819625
+    modified: 1748880457345
 environments:
   name: Base Environment
   meta:
     id: env_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502167
-    modified: 1748879819626
+    modified: 1748880457346
     isPrivate: false
   data:
-    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
-  subEnvironments:
-    - name: OpenAPI env httpbin.konghq.com
-      meta:
-        id: env_ed4856a967c248b68ded1b7756373750
-        created: 1748879409305
-        modified: 1748879819625
-        isPrivate: false
-        sortKey: 1748879409305
-      data:
-        scheme: https
-        host: httpbin.konghq.com
+    base_url: https://httpbin.konghq.com
 spec:
   contents:
     openapi: 3.0.1
