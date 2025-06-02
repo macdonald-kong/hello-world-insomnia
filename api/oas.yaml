@@ -1,38 +1,99 @@
-openapi: 3.0.1
-info:
-  version: '1.0'
-  title: HTTPBin-Headers
-  description: HTTPBin Headers Demo Spec v1.3
-  contact: 
-    email: david.macdonald@konghq.com
-
-servers:
-  - url: https://httpbin.konghq.com
-
-tags:
+type: spec.insomnia.rest/5.0
+name: APIOps
+meta:
+  id: wrk_18745debb6d7411ebae1715d974cf1a7
+  created: 1743075711488
+  modified: 1743075711488
+collection:
   - name: headers
-    description: Operations for testing headers
-
-paths:
-
-  /headers:
-    get:
-      summary: Returns the request headers.
-      description: Header service
-      operationId: v1GetHeaders
-      tags:
-      - headers
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  headers:
+    meta:
+      id: fld_72c2b18325ee42578ef30e6c8990b556
+      created: 1743075736437
+      modified: 1743075736437
+      sortKey: -1743075736437
+      description: Operations for testing headers
+    children:
+      - url: "{{ _.base_url }}/headers"
+        name: Returns the request headers.
+        meta:
+          id: req_3d9e9af2b86b41db9d9110accc6ebe9e
+          created: 1743075736437
+          modified: 1743075736437
+          isPrivate: false
+          description: Header service
+          sortKey: -1743075736437
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_4889b7f6f6bb5602e46591082cdd0e4c2fa8208d
+    created: 1743075711493
+    modified: 1743075711493
+environments:
+  name: Base Environment
+  meta:
+    id: env_4889b7f6f6bb5602e46591082cdd0e4c2fa8208d
+    created: 1743075711492
+    modified: 1743075736435
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: OpenAPI env httpbin.konghq.com
+      meta:
+        id: env_fd2869e096134c96b9af8941fb64ae9c
+        created: 1743075736436
+        modified: 1743075736436
+        isPrivate: false
+        sortKey: 1743075736436
+      data:
+        scheme: https
+        host: httpbin.konghq.com
+spec:
+  contents:
+    openapi: 3.0.1
+    info:
+      version: "1.0"
+      title: HTTPBin-Headers
+      description: HTTPBin Headers Demo Spec v1.3
+      contact:
+        email: david.macdonald@konghq.com
+    servers:
+      - url: https://httpbin.konghq.com
+    tags:
+      - name: headers
+        description: Operations for testing headers
+    paths:
+      /headers:
+        get:
+          summary: Returns the request headers.
+          description: Header service
+          operationId: v1GetHeaders
+          tags:
+            - headers
+          responses:
+            "200":
+              description: OK
+              content:
+                application/json:
+                  schema:
                     type: object
-                    additionalProperties:
-                      type: string
-                required:
-                  - headers
+                    properties:
+                      headers:
+                        type: object
+                        additionalProperties:
+                          type: string
+                    required:
+                      - headers
+  meta:
+    id: spc_4806d202d77f40b483499db28f4c0747
+    created: 1743075711491
+    modified: 1743526104583
