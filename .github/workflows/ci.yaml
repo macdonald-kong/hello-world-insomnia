@@ -215,4 +215,4 @@ jobs:
     - name: Run Tests
       id: run-tests
       run: |
-        inso run collection wrk_98afbf -e env_ed4856 -w ./api/insomnia-design-doc.yaml --bail
+        inso run collection wrk_98afbf -w ./api/insomnia-design-doc.yaml --bail
