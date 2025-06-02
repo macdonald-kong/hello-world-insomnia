@@ -4,19 +4,73 @@ meta:
   id: wrk_98afbfd976234ecda2aba4d6cf26c0ce
   created: 1748877502161
   modified: 1748877502161
+collection:
+  - url: "{{ _.base_url }}/anything"
+    name: Returns the request payload and headers.
+    meta:
+      id: req_0a3e2d053eed4c96b4c14f4c39438c89
+      created: 1748879409306
+      modified: 1748879793955
+      isPrivate: false
+      description: Anything service
+      sortKey: -1748879409306
+    method: GET
+    scripts:
+      afterResponse: |
+        insomnia.test("Check if the array has all expected properties", () => {
+
+        // Parse the response body as a JSON array
+        let body = insomnia.response.json();
+
+        insomnia.expect(body).to.have.property('args');
+        insomnia.expect(body).to.have.property('data');
+        insomnia.expect(body).to.have.property('files');
+        insomnia.expect(body).to.have.property('form');
+        insomnia.expect(body).to.have.property('headers');
+        insomnia.expect(body).to.have.property('json');
+        insomnia.expect(body).to.have.property('method');
+        insomnia.expect(body).to.have.property('origin');
+        insomnia.expect(body).to.have.property('url');
+        	
+        });
+
+        insomnia.test('Check if status is 200', () => {
+            insomnia.expect(insomnia.response.code).to.eql(200);
+        });
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
     id: jar_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502168
-    modified: 1748877502168
+    modified: 1748879819625
 environments:
   name: Base Environment
   meta:
     id: env_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502167
-    modified: 1748877502167
+    modified: 1748879819626
     isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: OpenAPI env httpbin.konghq.com
+      meta:
+        id: env_ed4856a967c248b68ded1b7756373750
+        created: 1748879409305
+        modified: 1748879819625
+        isPrivate: false
+        sortKey: 1748879409305
+      data:
+        scheme: https
+        host: httpbin.konghq.com
 spec:
   contents:
     openapi: 3.0.1
@@ -34,9 +88,9 @@ spec:
     paths:
       /anything:
         get:
-          summary: Returns the request headers.
-          description: Header service
-          operationId: v1GetHeaders
+          summary: Returns the request payload and headers.
+          description: Anything service
+          operationId: v1GetAnything
           tags:
             - headers
           responses:
@@ -56,4 +110,4 @@ spec:
   meta:
     id: spc_654d6ad1f91d42289a8c2d354d4d0e05
     created: 1748877502166
-    modified: 1748877536367
+    modified: 1748879394589
