@@ -50,13 +50,13 @@ cookieJar:
   meta:
     id: jar_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502168
-    modified: 1748880457345
+    modified: 1748947086746
 environments:
   name: Base Environment
   meta:
     id: env_d5bf5246a4c0f81cb589362dbf01911d3d5de451
     created: 1748877502167
-    modified: 1748880457346
+    modified: 1748947086746
     isPrivate: false
   data:
     base_url: https://httpbin.konghq.com
@@ -73,7 +73,7 @@ spec:
       - url: https://httpbin.konghq.com
     tags:
       - name: anything
-        description: Operations for testing anything
+        description: Operations for testing anything.
     paths:
       /anything:
         get:
@@ -99,4 +99,4 @@ spec:
   meta:
     id: spc_654d6ad1f91d42289a8c2d354d4d0e05
     created: 1748877502166
-    modified: 1748894240958
+    modified: 1748947332553
